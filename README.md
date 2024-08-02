@@ -22,7 +22,7 @@ This is a Discord bot designed to handle user verification through a series of i
 1. Clone the repository:
 
 ```sh
-git clone https://github.com/your-repo/verification-bot.git
+git clone https://github.com/Boda335/Verification-Bot.git
 cd verification-bot
 ```
 
