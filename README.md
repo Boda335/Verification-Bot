@@ -77,9 +77,9 @@ The bot offers three levels of difficulty for the verification process:
 Each level is designed to provide a varying degree of challenge to ensure the authenticity of the user verification process.
 
 <div style="text-align: center;">
-  <img src="https://l.top4top.io/p_31258yn4x2.jpg" alt="AstroMusic Illustration" width="30%">
-  <img src="https://l.top4top.io/p_31258yn4x2.jpg" alt="AstroMusic Illustration" width="30%">
-  <img src="https://l.top4top.io/p_31258yn4x2.jpg" alt="AstroMusic Illustration" width="30%">
+  <img src="https://d.top4top.io/p_3136ssht11.png" alt="Easy" width="30%">
+  <img src="https://e.top4top.io/p_3136v3mvg2.png" alt="Medium" width="30%">
+  <img src="https://f.top4top.io/p_3136obvf33.png" alt="Hard" width="30%">
 </div>
 
 ## Bot Commands
