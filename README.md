@@ -13,7 +13,7 @@ This is a Discord bot designed to handle user verification through a series of i
 
 ## Prerequisites
 
-- Python 3.8 or higher
+- Python 2.4 or higher
 - Discord.py library
 - PIL library for image processing
 
