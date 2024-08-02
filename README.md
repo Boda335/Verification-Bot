@@ -58,6 +58,30 @@ python bot.py
 5. Enter the text from the image into the modal that appears.
 6. If the text is correct, you will be granted the verified role.
 
+## Verification Difficulties
+
+The bot offers three levels of difficulty for the verification process:
+
+### Easy 🟢
+- A string of 6 digits.
+- Example: `123456`
+
+### Medium 🟡
+- A string of 6 alphanumeric characters (letters and numbers).
+- Example: `a1b2c3`
+
+### Hard 🔴
+- A string of 8 characters including letters, numbers, and punctuation.
+- Example: `a1!b2@c3`
+
+Each level is designed to provide a varying degree of challenge to ensure the authenticity of the user verification process.
+
+<div style="display: flex; justify-content: space-around;">
+  <img src="https://l.top4top.io/p_31258yn4x2.jpg" alt="AstroMusic Illustration" width="30%">
+  <img src="https://l.top4top.io/p_31258yn4x2.jpg" alt="AstroMusic Illustration" width="30%">
+  <img src="https://l.top4top.io/p_31258yn4x2.jpg" alt="AstroMusic Illustration" width="30%">
+</div>
+
 ## Bot Commands
 
 - `/verify`: Starts the verification process. This command is only available to users with administrative permissions.
@@ -88,3 +112,7 @@ This project is licensed under the MIT License. See the `LICENSE` file for more 
 
 - The Discord.py community for their continuous support and development of the library.
 - The Pillow library for providing easy-to-use image processing capabilities.
+
+---
+
+This README provides a comprehensive guide on how to set up, run, and use the verification bot. If you have any questions or need further assistance, feel free to open an issue on the GitHub repository.
