@@ -41,9 +41,11 @@ pip install discord.py Pillow
 }
 ```
 
-4. Make sure you have an image for the background located at `./src/bg/background.png`. You can change the path to your preferred image in the `create_image_with_text` function.
+4. Make sure you have an image for the background located at `./src/bg/background.png`.
 
-5. Run the bot:
+6. Make sure you have a font for the text located at `./src/font/font.ttf`. 
+
+7. Run the bot:
 
 ```sh
 python bot.py
