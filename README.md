@@ -87,9 +87,9 @@ Each level is designed to provide a varying degree of challenge to ensure the au
 ## Bot Commands
 
 - `/verify`: Starts the verification process. This command is only available to users with administrative permissions.
-**After typing the command, you will respond with Embed with buttons as in the picture, from which you can choose the difficulty**
+- After typing the command, you will respond with Embed with buttons as in the picture, from which you can choose the difficulty
 <div style="text-align: center;">
-  <img src="https://d.top4top.io/p_3136ssht11.png" alt="Easy" >
+  <img src="https://l.top4top.io/p_31366peti1.png" alt="Easy" >
 </div>
 
 ## Code Explanation
