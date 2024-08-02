@@ -6,7 +6,6 @@ from PIL import Image, ImageDraw, ImageFont
 import json
 import string
 
-# تحميل التكوين من ملف config.json
 with open('config.json') as f:
     config = json.load(f)
 
@@ -24,9 +23,7 @@ async def on_ready():
 
 @bot.tree.command(name="verify", description="Start the verification process")
 async def verify(interaction: discord.Interaction):
-    # التحقق من صلاحيات المستخدم
     if interaction.user.guild_permissions.administrator:
-        # Embed لاختيار الصعوبة
         embed = discord.Embed(title="Verification", description="Choose the difficulty level for verification", color=0x479c85)
         embed.set_footer(text="This message will be hidden after choosing difficulty.")
         
@@ -38,13 +35,11 @@ async def verify(interaction: discord.Interaction):
             difficulty = interaction.data['custom_id'].split('_')[-1]
             await interaction.response.send_message("You have selected the difficulty level.", ephemeral=True)
             
-            # إرسال Embed مع زر Verify
             embed2 = discord.Embed(title="Verification", description="Click the button to verify", color=0x479c85)
             embed2.set_image(url="https://files.shapes.inc/af5e4e7c.png")
             button_verify = discord.ui.Button(label="Verify", style=discord.ButtonStyle.primary, custom_id=f"verify_{difficulty}")
             
             async def verify_button_callback(interaction: discord.Interaction):
-                # التحقق مما إذا كان المستخدم لديه الرتبة بالفعل
                 role = discord.utils.get(interaction.guild.roles, id=int(config['role_id']))
                 if role in interaction.user.roles:
                     await interaction.response.send_message("You are already verified.", ephemeral=True)
@@ -52,7 +47,7 @@ async def verify(interaction: discord.Interaction):
                     random_string = generate_random_string(difficulty)
                     image = create_image_with_text(random_string)
                     
-                    embed3 = discord.Embed(title="Enter the text", description=f"Please enter the {difficulty} text shown in the image.")
+                    embed3 = discord.Embed(title="Enter the text", description=f"Please enter the text shown in the image.")
                     file = discord.File(fp=image, filename="text.png")
                     embed3.set_image(url="attachment://text.png")
                     
@@ -83,7 +78,6 @@ async def verify(interaction: discord.Interaction):
         
         await interaction.response.send_message(embed=embed, view=view, ephemeral=True)
     else:
-        # رسالة توضح أن المستخدم ليس لديه صلاحيات
         await interaction.response.send_message("You do not have the required permissions to use this command.", ephemeral=True)
 
 def generate_random_string(difficulty):
@@ -96,34 +90,29 @@ def generate_random_string(difficulty):
 
 def create_image_with_text(text):
     width, height = 400, 200
-    background_image_path = './src/bg/background.png'  # Image in the same folder as the bot
+    background_image_path = './src/bg/background.png'
     
-    # Load the background image
     background_image = Image.open(background_image_path)
     background_image = background_image.resize((width, height))
     
-    # Create an image for drawing
     image = Image.new('RGBA', (width, height), (0, 0, 0, 0))
     image.paste(background_image, (0, 0))
     
     draw = ImageDraw.Draw(image)
     
-    # Load a custom font
+
     try:
-        font = ImageFont.truetype("arial.ttf", size=60)  # You can specify a different font and size here
+        font = ImageFont.truetype("./src/font/font.ttf", size=60) 
     except IOError:
         font = ImageFont.load_default()
     
-    # Customize text color
-    text_color = (168,10,16,255)  # White color
+    text_color = (168,10,16,255) 
 
-    # Calculate text size and position
     bbox = draw.textbbox((0, 0), text, font=font)
     textwidth, textheight = bbox[2] - bbox[0], bbox[3] - bbox[1]
     
-    # Set new coordinates for the text
-    x = (width - textwidth) / 2  # Center horizontally
-    y = (height - textheight) / 2.5  # Center vertically
+    x = (width - textwidth) / 2  
+    y = (height - textheight) / 2.5  
     
     draw.text((x, y), text, font=font, fill=text_color)
     
@@ -150,5 +139,4 @@ class TextModal(discord.ui.Modal, title="Enter the text"):
         else:
             await interaction.response.send_message("Incorrect text. Please try again.", ephemeral=True)
 
-# استخدم التوكن من ملف التكوين
 bot.run(config['token'])
