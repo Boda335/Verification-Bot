@@ -76,7 +76,7 @@ The bot offers three levels of difficulty for the verification process:
 
 Each level is designed to provide a varying degree of challenge to ensure the authenticity of the user verification process.
 
-<div style="display: flex; justify-content: space-around;">
+<div style="text-align: center;">
   <img src="https://l.top4top.io/p_31258yn4x2.jpg" alt="AstroMusic Illustration" width="30%">
   <img src="https://l.top4top.io/p_31258yn4x2.jpg" alt="AstroMusic Illustration" width="30%">
   <img src="https://l.top4top.io/p_31258yn4x2.jpg" alt="AstroMusic Illustration" width="30%">
@@ -112,7 +112,3 @@ This project is licensed under the MIT License. See the `LICENSE` file for more 
 
 - The Discord.py community for their continuous support and development of the library.
 - The Pillow library for providing easy-to-use image processing capabilities.
-
----
-
-This README provides a comprehensive guide on how to set up, run, and use the verification bot. If you have any questions or need further assistance, feel free to open an issue on the GitHub repository.
