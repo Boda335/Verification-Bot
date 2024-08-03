@@ -58,12 +58,12 @@ async def verify(interaction: discord.Interaction):
                         await interaction.response.send_modal(modal)
                     
                     button_submit.callback = submit_button_callback
-                    view = discord.ui.View()
+                    view = discord.ui.View(timeout=None) 
                     view.add_item(button_submit)
                     await interaction.response.send_message(embed=embed3, file=file, view=view, ephemeral=True)
             
             button_verify.callback = verify_button_callback
-            view = discord.ui.View()
+            view = discord.ui.View(timeout=None) 
             view.add_item(button_verify)
             
             await interaction.followup.send(embed=embed2, view=view)
@@ -71,7 +71,7 @@ async def verify(interaction: discord.Interaction):
         for button in [button_easy, button_medium, button_hard]:
             button.callback = difficulty_button_callback
         
-        view = discord.ui.View()
+        view = discord.ui.View(timeout=None)
         view.add_item(button_easy)
         view.add_item(button_medium)
         view.add_item(button_hard)
@@ -100,7 +100,6 @@ def create_image_with_text(text):
     
     draw = ImageDraw.Draw(image)
     
-
     try:
         font = ImageFont.truetype("./src/font/font.ttf", size=60) 
     except IOError:
